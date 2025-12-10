@@ -35,7 +35,6 @@ https://www.youtube.com/watch?v=NZFzMEZ9l-Y
 <br/>![Captures](https://images-na.ssl-images-amazon.com/images/I/A1p%2BBYQK5BL.png)
 
 You can run it from the command line (ex: FlashBrowser.exe D:\\Achilles.swf ) :
-<br/>![Captures](https://flash.pm/Capture.JPG)
 
 
 # Socials:
