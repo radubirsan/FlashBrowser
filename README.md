@@ -1,4 +1,3 @@
-<p>⚡⚡⚡ Join the discussion <a href="https://forum.flash.pm">Flash Forum</a> is live ⚡⚡⚡<br>
 
 # Setup instructions:
  - download & unzip code
