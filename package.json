@@ -10,6 +10,7 @@
     "start": "electron .",
     "publish": "electron-builder --win -p always",
     "build": "electron-builder --win",
+    "buildLinux": "electron-builder --linux",
     "build1": "electron-packager . FlashBrowser --platform=darwin --overwrite --icon=icon.icns",
     "build2": "electron-packager . FlashBrowser --platform=win32 --overwrite --icon=icon.ico",
     "build3": "electron-packager . FlashBrowser --all --overwrite --icon=icon.ico",
@@ -44,8 +45,19 @@
     "appId": "pm.flash.browser",
     "directories": {
       "buildResources": "resources",
-      "flashver": "flashver",
       "output": "release"
+    },
+    "extraResources": [
+      {
+        "from": "flashver",
+        "to": "flashver",
+        "filter": ["**/*"]
+      }
+    ],
+    "linux": {
+      "target": ["AppImage"], 
+      "category": "Network",
+      "executableName": "FlashBrowser"
     },
     "publish": [
       {

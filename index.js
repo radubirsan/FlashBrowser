@@ -67,8 +67,13 @@ app.commandLine.appendSwitch("--log-level", 4);
 
 // SECURITY NOTE: Load PPAPI Flash plugin with error handling
 try {
-	const pluginPath = path.join(__dirname, pluginName);
+	const isPackaged = __dirname.includes(".asar");
+	// 基础资源路径：开发环境用 __dirname，打包后用 process.resourcesPath
+	const baseResourcesPath = isPackaged ? process.resourcesPath : __dirname;
+	const pluginPath = path.join(baseResourcesPath, pluginName);
 	app.commandLine.appendSwitch('ppapi-flash-path', pluginPath);
+	// 显式指定版本号，部分 Linux 内核对版本检测很敏感
+	app.commandLine.appendSwitch('ppapi-flash-version', '32.0.0.465');
 	console.log(`Flash plugin loaded from: ${pluginPath}`);
 } catch (error) {
 	console.error('Failed to load Flash plugin:', error);
